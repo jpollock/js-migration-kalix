@@ -3,10 +3,10 @@
  * You are free to make changes to this file.
  */
 
-import { AkkaServerless } from "@lightbend/akkaserverless-javascript-sdk";
+import { Kalix } from "@kalix-io/kalix-javascript-sdk";
 import generatedComponents from "../lib/generated/index.js";
 
-const server = new AkkaServerless();
+const server = new Kalix();
 
 // This generatedComponentArray array contains all generated Actions, Views or Entities,
 // and is kept up-to-date with any changes in your protobuf definitions.
