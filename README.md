@@ -15,6 +15,16 @@ This is a sample JS project that shows what files need to be changed for migrati
 7. search replace "lightbend" with "kalix-io" in JS/TS files
 8. for local testing, search replace "akkaserverless" with "kalix" in docker-compose.yml. (and switchversion to `latest`); also search replace "akka-serverless" with "kalix-io"
 
+The following commands should also work:
+
+    find . -type f | xargs sed -i '' -e 's/AkkaServerless/Kalix/g'
+    find . -type f | xargs sed -i '' -e 's/akkaserverless/kalix/g'
+    find . -type f | xargs sed -i '' -e 's/akkasls/kalix/g'
+    find . -type f | xargs sed -i '' -e 's/@lightbend/@kalix-io/g'
+    find . -type f | xargs sed -i '' -e 's/0.33.[0-9]/1.0.0-M4/g'
+    rm package-lock.json
+    npm install
+
 ## deployment
 
 1. `npm run package` to create container.
