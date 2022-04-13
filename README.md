@@ -25,6 +25,20 @@ The following commands should also work:
     rm package-lock.json
     npm install
 
+On a mac, the above did not work, I tried the below with success.
+
+    LC_CTYPE=C find . -type f -exec sed -i '' -e 's/AkkaServerless/Kalix/g' {} +
+    LC_CTYPE=C find . -type f -exec sed -i '' -e 's/akkaserverless/kalix/g' {} +
+    LC_CTYPE=C find . -type f -exec sed -i '' -e 's/akkasls/kalix/g' {} +
+    LC_CTYPE=C find . -type f -exec sed -i '' -e 's/@lightbend/@kalix-io/g' {} +
+    LC_CTYPE=C find . -type f -exec sed -i '' -e 's/0.33.[0-9]/1.0.0-M4/g' {} +
+    rm package-lock.json
+    rm -f -R node_modules/*
+    npm install
+
+
+
+
 ## deployment
 
 1. `npm run package` to create container.
